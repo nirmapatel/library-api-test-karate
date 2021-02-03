@@ -104,8 +104,7 @@ Feature: Library -> add new book API -ve tests
     * print response
     * status 200
     * match response == { "msg": "book is successfully deleted" }
-
-
+    
   Scenario: Add existing book with the same isbn and aisle again
 #    Add new book
     * path addBookPath

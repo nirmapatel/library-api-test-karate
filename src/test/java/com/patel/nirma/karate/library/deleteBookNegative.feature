@@ -1,4 +1,4 @@
-Feature: Library -> add new book API -ve tests
+Feature: Library -> delete book API -ve tests
 
   Background:
     * url baseUrl
