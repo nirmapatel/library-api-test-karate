@@ -13,9 +13,9 @@ Feature: Library API
   Scenario: Verify book life cycle
     #   1. Add new book
     * path addBookPath
-    * request { name: 'Learn API testing with karate', isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * header Accept = 'application/json'
     * header Content-Type = 'application/json'
+    * request { name: 'Learn API testing with karate', isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * method POST
     * print response
     * status 200
@@ -41,9 +41,9 @@ Feature: Library API
     * match response[0].author == 'Nirma Patel'
 #   4. Delete book
     * path deleteBookPath
-    * request { ID: '#(bookId)' }
     * header Accept = 'application/json'
     * header Content-Type = 'application/json'
+    * request { ID: '#(bookId)' }
     * method POST
     * print response
     * status 200

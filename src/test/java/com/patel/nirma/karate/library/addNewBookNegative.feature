@@ -7,9 +7,9 @@ Feature: Library -> add new book API -ve tests
 
   Scenario: Add new book without name
     * path addBookPath
-    * request { isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * header Accept = 'application/json'
     * header Content-Type = 'application/json'
+    * request { isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * method POST
     * print response
     * status 200
@@ -25,8 +25,8 @@ Feature: Library -> add new book API -ve tests
 
   Scenario: Add new book without author
     * path addBookPath
-    * request { name: 'Learn API testing with karate - Part 2', isbn: '#(isbnNo)', aisle: '#(aisleNo)'}
     * header Accept = 'application/json'
+    * request { name: 'Learn API testing with karate - Part 2', isbn: '#(isbnNo)', aisle: '#(aisleNo)'}
     * method POST
     * print response
     * status 200
@@ -42,9 +42,9 @@ Feature: Library -> add new book API -ve tests
 
   Scenario: Add new book without isbn
     * path addBookPath
-    * request { name: 'Learn API testing with karate - Part 2', aisle: '#(aisleNo)', author: 'Nirma Patel'}
     * header Accept = 'application/json'
     * header Content-Type = 'application/json'
+    * request { name: 'Learn API testing with karate - Part 2', aisle: '#(aisleNo)', author: 'Nirma Patel'}
     * method POST
     * print response
     * status 200
@@ -60,9 +60,9 @@ Feature: Library -> add new book API -ve tests
 
   Scenario: Add new book without aisle
     * path addBookPath
-    * request { name: 'Learn API testing with karate - Part 2', isbn: '#(isbnNo)', author: 'Nirma Patel'}
     * header Accept = 'application/json'
     * header Content-Type = 'application/json'
+    * request { name: 'Learn API testing with karate - Part 2', isbn: '#(isbnNo)', author: 'Nirma Patel'}
     * method POST
     * print response
     * status 200
@@ -79,17 +79,17 @@ Feature: Library -> add new book API -ve tests
   Scenario: Add existing book with the same details again
 #    Add new book
     * path addBookPath
-    * request { name: 'Learn API testing with karate', isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * header Accept = 'application/json'
     * header Content-Type = 'application/json'
+    * request { name: 'Learn API testing with karate', isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * method POST
     * print response
     * status 200
     * match response == {ID: '#(isbnNo + aisleNo)', Msg: 'successfully added' }
 #    Try to add the same book again
     * path addBookPath
-    * request { name: 'Learn API testing with karate', isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * header Accept = 'application/json'
+    * request { name: 'Learn API testing with karate', isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * method POST
     * print response
 #    Verify negative response
@@ -97,9 +97,9 @@ Feature: Library -> add new book API -ve tests
     * match response == {"msg":"Add Book operation failed, looks like the book already exists"}
 #     CleanUp
     * path deleteBookPath
-    * request { ID: '#(isbnNo + aisleNo)' }
     * header Accept = 'application/json'
     * header Content-Type = 'application/json'
+    * request { ID: '#(isbnNo + aisleNo)' }
     * method POST
     * print response
     * status 200
@@ -108,17 +108,17 @@ Feature: Library -> add new book API -ve tests
   Scenario: Add existing book with the same isbn and aisle again
 #    Add new book
     * path addBookPath
-    * request { name: 'Learn API testing with karate - Part 2', isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * header Accept = 'application/json'
     * header Content-Type = 'application/json'
+    * request { name: 'Learn API testing with karate - Part 2', isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * method POST
     * print response
     * status 200
     * match response == {ID: '#(isbnNo + aisleNo)', Msg: 'successfully added' }
 #    Try to add the same book again
     * path addBookPath
-    * request { name: 'Learn API testing with karate - Part 3', isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * header Accept = 'application/json'
+    * request { name: 'Learn API testing with karate - Part 3', isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * method POST
     * print response
 #    Verify negative response
@@ -126,9 +126,9 @@ Feature: Library -> add new book API -ve tests
     * match response == {"msg":"Add Book operation failed, looks like the book already exists"}
 #     CleanUp
     * path deleteBookPath
-    * request { ID: '#(isbnNo + aisleNo)' }
     * header Accept = 'application/json'
     * header Content-Type = 'application/json'
+    * request { ID: '#(isbnNo + aisleNo)' }
     * method POST
     * print response
     * status 200
