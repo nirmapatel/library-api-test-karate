@@ -9,6 +9,7 @@ Feature: Library -> add new book API -ve tests
     * path addBookPath
     * request { isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * header Accept = 'application/json'
+    * header Content-Type = 'application/json'
     * method POST
     * print response
     * status 200
@@ -43,6 +44,7 @@ Feature: Library -> add new book API -ve tests
     * path addBookPath
     * request { name: 'Learn API testing with karate - Part 2', aisle: '#(aisleNo)', author: 'Nirma Patel'}
     * header Accept = 'application/json'
+    * header Content-Type = 'application/json'
     * method POST
     * print response
     * status 200
@@ -60,6 +62,7 @@ Feature: Library -> add new book API -ve tests
     * path addBookPath
     * request { name: 'Learn API testing with karate - Part 2', isbn: '#(isbnNo)', author: 'Nirma Patel'}
     * header Accept = 'application/json'
+    * header Content-Type = 'application/json'
     * method POST
     * print response
     * status 200
@@ -78,11 +81,12 @@ Feature: Library -> add new book API -ve tests
     * path addBookPath
     * request { name: 'Learn API testing with karate', isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * header Accept = 'application/json'
+    * header Content-Type = 'application/json'
     * method POST
     * print response
     * status 200
     * match response == {ID: '#(isbnNo + aisleNo)', Msg: 'successfully added' }
-#    Try to the same book again
+#    Try to add the same book again
     * path addBookPath
     * request { name: 'Learn API testing with karate', isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * header Accept = 'application/json'
@@ -95,6 +99,7 @@ Feature: Library -> add new book API -ve tests
     * path deleteBookPath
     * request { ID: '#(isbnNo + aisleNo)' }
     * header Accept = 'application/json'
+    * header Content-Type = 'application/json'
     * method POST
     * print response
     * status 200
@@ -106,11 +111,12 @@ Feature: Library -> add new book API -ve tests
     * path addBookPath
     * request { name: 'Learn API testing with karate - Part 2', isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * header Accept = 'application/json'
+    * header Content-Type = 'application/json'
     * method POST
     * print response
     * status 200
     * match response == {ID: '#(isbnNo + aisleNo)', Msg: 'successfully added' }
-#    Try to the same book again
+#    Try to add the same book again
     * path addBookPath
     * request { name: 'Learn API testing with karate - Part 3', isbn: '#(isbnNo)', aisle: '#(aisleNo)', author: 'Nirma Patel' }
     * header Accept = 'application/json'
@@ -123,6 +129,7 @@ Feature: Library -> add new book API -ve tests
     * path deleteBookPath
     * request { ID: '#(isbnNo + aisleNo)' }
     * header Accept = 'application/json'
+    * header Content-Type = 'application/json'
     * method POST
     * print response
     * status 200

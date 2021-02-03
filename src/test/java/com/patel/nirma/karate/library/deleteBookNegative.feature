@@ -3,7 +3,7 @@ Feature: Library -> add new book API -ve tests
   Background:
     * url baseUrl
 
-  Scenario: Delete book
+  Scenario: Delete book with empty request
     * path deleteBookPath
     * request {  }
     * header Accept = 'application/json'
